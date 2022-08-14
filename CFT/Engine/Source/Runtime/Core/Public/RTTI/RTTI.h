@@ -4,7 +4,7 @@
 #include <functional>
 #include <memory>
 
-#include "CoreMacros.h"
+#include "Core.h"
 
 CFT_BEGIN
 

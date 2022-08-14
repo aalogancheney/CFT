@@ -26,7 +26,7 @@ project "CFT"
 
 	includedirs
 	{
-
+		"%{prj.name}/Engine/Source/Runtime/**Public/"
 	}
 
 	filter "system:windows"
@@ -73,7 +73,9 @@ project "Sandbox"
 
 	includedirs
 	{
-		"CFT/Engine/Source"
+		"CFT/Engine/Source/Runtime/",
+		"CFT/Engine/Source/Runtime/**Public/",
+		"%{prj.name}/Source/Runtime/**Public/"
 	}
 
 	links

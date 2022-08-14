@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CoreMacros.h"
-#include "RTTI.h"
+#include "RTTI/RTTI.h"
 
 CFT_BEGIN
 

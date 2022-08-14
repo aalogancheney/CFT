@@ -1,40 +1,29 @@
 #pragma once
 
-#include <memory>
-
-#include "CoreMacros.h"
-#include "IService.h"
+#include "Core.h"
 
 CFT_BEGIN
+
+class IService;
 
 class ServiceProvider
 {
 public:
-	ServiceProvider(IService* InService)
-		: Generation{ 0 }
-		, Service{ InService }
-	{
-
-	}
+	CFT_API ServiceProvider(class IService* InService);
 
 public:
-	FORCE_INLINE SharedPtr<IService> GetService() const { return Service; }
+	CFT_API SharedPtr<class IService> GetService() const;
+	CFT_API void ProvideService(class IService* InService);
 
-	FORCE_INLINE int GetGeneration() const { return Generation; }
-
-	void ProvideService(IService* InService)
-	{
-		Service.reset(InService);
-		++Generation;
-	}
+	CFT_API int32 GetGeneration() const;
 
 private:
-	int Generation;
-	SharedPtr<IService> Service;
+	int32 Generation;
+	SharedPtr<class IService> Service;
 };
 
 template<typename T>
-class CFT_API TServiceProvider
+class TServiceProvider
 {
 public:
 	TServiceProvider(const ServiceProvider& InServiceProvider)
@@ -60,7 +49,7 @@ private:
 	}
 
 private:
-	int CachedGeneration;
+	int32 CachedGeneration;
 	SharedPtr<T> CachedService;
 	const ServiceProvider& Provider;
 };

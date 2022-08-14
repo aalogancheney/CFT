@@ -1,5 +1,6 @@
 #pragma once
 
-#include "Core/Public/Application.h"
+#include "Core.h"
+#include "Application.h"
 
 #include "EntryPoint.h"

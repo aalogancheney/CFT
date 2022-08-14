@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Runtime/CFT.h>
+#include "CFT.h"
 
 class SandboxApplication : public CFT::Application
 {
